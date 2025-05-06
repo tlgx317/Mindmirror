@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindMirror - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>MindMirror</h1>
+    </header>
+
+    <main>
+        <div class="mood-mirror-container">
+            <h2>How are you feeling?</h2>
+            
+            <div id="mood-face-container">
+                <div id="mood-face"></div>
+            </div>
+
+            <div class="slider-container">
+                <span id="mood-emoji-display">😐</span>
+                <input type="range" min="0" max="4" value="2" class="slider" id="mood-slider">
+            </div>
+            
+            <textarea id="mood-note" placeholder="Add a note about your mood (optional)"></textarea>
+            <button id="save-mood-button">Save Mood</button>
+        </div>
+
+        <div class="quote-container">
+            <p id="motivational-quote">"Take a deep breath. You are doing your best."</p>
+        </div>
+
+        <div class="history-button-container">
+            <button id="view-history-button">View Mood History</button>
+        </div>
+
+        <div id="mindful-anchor-prompt-container" style="display: none;">
+            <p id="mindful-anchor-message">It's okay to feel this way.</p>
+            <p>Would you like a brief moment to ground yourself?</p>
+            <button id="start-anchor-exercise-button" class="small-button">Yes, please</button>
+            <button id="decline-anchor-exercise-button" class="small-button secondary-button">No, thanks</button>
+        </div>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="privacy.html" class="nav-link">Privacy</a>
+    </nav>
+
+    <div id="mindful-exercise-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <span id="close-exercise-modal" class="close-modal-button">×</span>
+            <h2>A Moment of Calm</h2>
+            <div id="exercise-visual-container">
+                <div id="exercise-visual-pulse"></div>
+            </div>
+            <p id="exercise-text-prompt">Starting soon...</p>
+            <div id="exercise-timer-display"></div>
+            <button id="end-exercise-early-button" style="display: none;" class="small-button secondary-button">End Exercise</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

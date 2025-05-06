@@ -1,0 +1,451 @@
+/* Global Resets and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f4f8; /* Light gray background */
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-bottom: 70px; /* Space for fixed navbar */
+}
+
+header {
+    background-color: #a29bfe; /* Light Purple */
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Mood Mirror Container */
+.mood-mirror-container {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+.mood-mirror-container h2 {
+    margin-bottom: 20px;
+    color: #555;
+    font-weight: 400;
+}
+
+/* Mood Face */
+#mood-face-container {
+    margin-bottom: 25px;
+}
+
+#mood-face {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    background-color: #C4C4FE; /* Lighter Purple - default neutral */
+    border: 4px solid white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: background-color 0.4s ease, transform 0.4s ease;
+}
+
+.mood-vhappy { background-color: #55E6C1 !important; transform: scale(1.1); }
+.mood-happy { background-color: #74b9ff !important; transform: scale(1.05); }
+.mood-neutral { background-color: #C4C4FE !important; transform: scale(1); }
+.mood-sad { background-color: #A29BFE !important; transform: scale(0.95); }
+.mood-vsad { background-color: #8E8AFF !important; transform: scale(0.9); }
+
+/* Slider */
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+#mood-emoji-display {
+    font-size: 2rem;
+    width: 40px;
+    text-align: center;
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 70%;
+    height: 10px;
+    background: #dfe6e9;
+    outline: none;
+    opacity: 0.9;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border-radius: 5px;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #a29bfe;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #a29bfe;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+/* Text Area */
+#mood-note {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    min-height: 80px;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    resize: vertical;
+}
+
+/* Buttons */
+button {
+    background-color: #74b9ff; /* Teal */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    margin: 10px auto; /* Added top/bottom margin for spacing */
+}
+
+button:hover {
+    background-color: #52a0e0;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0px);
+}
+
+#save-mood-button {
+    background-color: #a29bfe;
+}
+#save-mood-button:hover {
+    background-color: #8179e4;
+}
+
+/* Quote Container */
+.quote-container {
+    margin-top: 25px;
+    padding: 15px;
+    background-color: #e9e7ff;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+#motivational-quote {
+    font-style: italic;
+    color: #5c53a0;
+    font-size: 0.95rem;
+}
+
+/* History Button Container */
+.history-button-container {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Mindful Anchor Prompt */
+#mindful-anchor-prompt-container {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e0e7ff; /* Slightly different light blue/purple */
+    border: 1px solid #c4c4fe;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+#mindful-anchor-prompt-container p {
+    margin-bottom: 10px;
+    color: #4a428a; /* Darker for readability */
+}
+#mindful-anchor-prompt-container p:last-of-type {
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.small-button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    margin: 5px;
+    display: inline-block;
+    width: auto;
+}
+
+.secondary-button {
+    background-color: #dfe6e9;
+    color: #555;
+}
+.secondary-button:hover {
+    background-color: #b2bec3;
+}
+
+/* Mindful Exercise Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s 0.3s; /* Delay visibility to match opacity */
+}
+
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0s 0s;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    text-align: center;
+    width: 90%;
+    max-width: 380px;
+    position: relative;
+    transform: scale(0.95) translateY(10px); /* Start slightly down and smaller */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.modal-overlay.show .modal-content {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+.close-modal-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.8rem;
+    color: #aaa;
+    cursor: pointer;
+    line-height: 1;
+}
+.close-modal-button:hover {
+    color: #777;
+}
+
+.modal-content h2 {
+    color: #a29bfe;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+#exercise-visual-container {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#exercise-visual-pulse {
+    width: 60px;
+    height: 60px;
+    background-color: #74b9ff;
+    border-radius: 50%;
+    animation: pulse-animation 2.5s infinite ease-in-out;
+}
+
+@keyframes pulse-animation {
+    0% { transform: scale(0.9); opacity: 0.7; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(0.9); opacity: 0.7; }
+}
+
+#exercise-text-prompt {
+    min-height: 40px;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    transition: opacity 0.5s ease;
+}
+#exercise-timer-display {
+    margin-top:10px;
+    font-size:0.8em;
+    color: #777;
+    min-height: 1em; /* Prevent layout shift */
+}
+
+
+/* Bottom Navigation */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.bottom-nav .nav-link {
+    color: #f0f4f8;
+    text-decoration: none;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+    flex-grow: 1; /* Make links take equal space */
+}
+
+.bottom-nav .nav-link:hover {
+    background-color: #555;
+}
+
+.bottom-nav .nav-link.active {
+    background-color: #a29bfe;
+    color: white;
+    font-weight: 600;
+}
+
+/* Content Pages (About, Privacy) */
+.content-page {
+    background-color: white;
+    padding: 20px;
+    margin: 20px; /* Use margin for spacing on content pages */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    width: 100%;
+    max-width: 600px;
+}
+
+.content-page h2 {
+    color: #a29bfe;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+.content-page h2:first-child {
+    margin-top: 0;
+}
+
+.content-page p, .content-page ul {
+    margin-bottom: 15px;
+}
+
+.content-page ul {
+    list-style-position: inside;
+    padding-left: 5px;
+}
+.content-page li {
+    margin-bottom: 8px;
+}
+
+.privacy-link-container {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.privacy-policy-link-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #74b9ff;
+    color: white !important; /* Ensure white text over button */
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+.privacy-policy-link-button:hover {
+    background-color: #52a0e0;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 360px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    .mood-mirror-container h2 {
+        font-size: 1.1rem;
+    }
+    #mood-emoji-display {
+        font-size: 1.8rem;
+    }
+    button, .privacy-policy-link-button {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+    .bottom-nav .nav-link {
+        font-size: 0.8rem;
+        padding: 8px 5px;
+    }
+    .modal-content {
+        padding: 20px;
+    }
+    .modal-content h2 {
+        font-size: 1.1rem;
+    }
+}
